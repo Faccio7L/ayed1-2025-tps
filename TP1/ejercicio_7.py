@@ -1,12 +1,15 @@
-def dia_siguiente(a,b,c):
+def dia_siguiente(a:int,b:int,c:int):
+    """
+    notifica cual es la fecha siguiente a la ingresada como parametro.
+    pre: recibe como parametro 3 enteros: un dia, un mes, un año.
+    post: retorna a, b y c segun el valor de los mismos del dia siguiente al ingresado.
+    """
     a += 1
     if b in [1,3,5,7,8,10,12]: #meses con 31 dias.
         if a > 31:
             a = 1
             b += 1
             
-                
-        
              #ya le sume 1 en la linea 3, asi que funciona joya.
         #-----------------------MESES CON 30 DIAS!------------------------------
     if b in [4,6,9,11]:
@@ -30,7 +33,12 @@ def dia_siguiente(a,b,c):
             
 
 
-def validar_fecha(a,b,c):
+def validar_fecha(a:int,b:int,c:int)-> bool:
+    """
+    se verifica que una fecha sea correcta o no.
+    pre: Obtiene como parametros 3 enteros (dia,mes,año)
+    post: Retorna True en caso de que sea una fecha existente. Caso contrario, False.
+    """
     if b in [1,3,5,7,8,10,12]:
         return a >= 1 and a <= 31 
     elif b in [4,6,9,11]:         
@@ -43,7 +51,12 @@ def validar_fecha(a,b,c):
     else: 
         return False
 
-def verificar_mayor(a,b,c,a_1,b_2,c_2):
+def verificar_mayor(a:int,b:int,c:int,a_1:int,b_2:int,c_2:int)-> bool:
+    """
+    Revisa que fecha entre 2 es mayor.
+    pre: Obtiene como parametro 2 fechas con su respectivo dia, mes y año.
+    post: Retorna True en caso de que la fecha original ingresada sea mayor, caso contrario False.
+    """
     #retorna True si la fecha original es mayor.
     if c > c_2:
         return True
@@ -65,14 +78,24 @@ def verificar_mayor(a,b,c,a_1,b_2,c_2):
 
 
 
-def dia_que_sigue(a, b, c):
-    lista_dia_siguiente = dia_siguiente(a, b, c)
-    print(f"El dia siguiente corresponde al dia {lista_dia_siguiente[0]}")
-    print(f"del mes {lista_dia_siguiente[1]} ")
-    print(f"del año {lista_dia_siguiente[2]}")
+def dia_que_sigue(a:int, b:int, c:int) -> None:
+    """
+    almacena en una variable la tupla devuelta por dia_siguiente y printea.
+    pre: Obtiene una fecha con su respectivo dia mes y año
+    post: printea los datos del dia siguiente.
+    """
+    tupla_dia_siguiente = dia_siguiente(a, b, c)
+    print(f"El dia siguiente corresponde al dia {tupla_dia_siguiente[0]}")
+    print(f"del mes {tupla_dia_siguiente[1]} ")
+    print(f"del año {tupla_dia_siguiente[2]}")
 
 
-def sumar_N_dias(a,b,c):
+def sumar_N_dias(a:int,b:int,c:int) -> None:
+    """
+    Permite sumar X cantidad de dias a la fecha ingresada
+    pre: Obtiene como parametro una fecha con su respectivo dia, mes y año.
+    post: Printea la diferencia de dias entre una fecha y otra.
+    """
     numero = int(input("Ingrese cuantos dias quiere sumar:"))
     for x in range(numero): #esta parte se complico un poco... la funcion dia siguiente esta preparada para pasar de a un num  y la consigna pide que no la modifique, asi que le paso los num de una.
         lista_dia_usuario = dia_siguiente(a,b,c)
@@ -106,7 +129,12 @@ def diferencia_entre_dos_fechas(a,b,c):
             print(f"La diferencia de dias es de {contador_dias} dias")
            
 
-def main():
+def main() -> None:
+    """
+    Se ingresan una fecha y se selecciona una opcion.
+    pre: No recibe parametros
+    post: invoca al resto de funciones.
+    """
     dia = int(input("Ingrese un dia:"))
     mes = int(input("Ingrese un mes:"))
     año = int(input("Ingrese un año"))

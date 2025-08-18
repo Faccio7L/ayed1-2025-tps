@@ -31,7 +31,7 @@ def triangular(num:int) -> bool:
     return False
 
 
-def main():
+def main() -> None:
     """
     Se ingresa un numero entero, luego invoca la funcion oblongo y triangular
     pre:No recibe parametros.
