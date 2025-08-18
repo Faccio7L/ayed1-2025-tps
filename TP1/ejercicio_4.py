@@ -1,4 +1,10 @@
-def pago(a,b):
+from typing import Tuple
+def pago(a:int,b:int)-> tuple:
+    """
+    Calcula cuantos billetes debe otorgar y valida
+    pre:Recibe dos numeros enteros y positivos.
+    post: Retorna la cantidad de billetes a devolver
+    """
     billetes_10 = 0
     billetes_50 = 0
     billetes_100 = 0
