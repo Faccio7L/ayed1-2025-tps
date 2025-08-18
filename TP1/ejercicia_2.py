@@ -1,4 +1,4 @@
-def validar_dia(a,b,c):
+def validar_dia(a:int,b:int,c:int) ->bool:
     if b in [1,3,5,7,8,10,12]:
         return c >= 1 and c <= 31 #devuelve true si se c se encuentra en este umbral
     elif b in [4,6,9,11]:         #sino false
@@ -11,7 +11,12 @@ def validar_dia(a,b,c):
     else: #entraria aca en caso de un mes inexistente!!!
         return False
     
-def main():
+def main() -> None:
+    """ 
+    Se ingresa un año, mes y dia y se envian a la funcion de validacion.
+    pre: No recibe parametros
+    post:Printea si es valida la fecha o no
+    """
     año = int(input("Ingree un año:"))
     mes = int(input("Ingrese un mes:"))
     dia = int(input("Ingrese un dia"))
