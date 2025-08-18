@@ -36,7 +36,13 @@ def pago(a,b):
             billetes_10 += 1
         return billetes_5000,billetes_1000, billetes_500, billetes_200, billetes_100, billetes_50, billetes_10
 
-def main():
+def main()-> None:
+    """
+    Se ingresa el monto que debe ser abonado y el dinero abonado.
+    pre: No recibe parametros
+    post: Muestra en pantalla cuando dinero se debe devolver.
+    """
+    assert total_a_pagar and pagado > 0, "Debe ingresar un monto positivo"
     total_a_pagar = int(input("Ingrese el monto a abonar:"))
     pagado = int(input("Ingrese el monto abonado:"))
     billetes = pago(total_a_pagar,pagado) # lo almaceno en una variable para trabajar con la lista retornada!!!
