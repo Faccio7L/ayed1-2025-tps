@@ -104,7 +104,12 @@ def sumar_N_dias(a:int,b:int,c:int) -> None:
         c = lista_dia_usuario[2]
     print(f"El dia obtenido es {lista_dia_usuario[0]} del mes {lista_dia_usuario[1]} del año {lista_dia_usuario[2]}")
 
-def diferencia_entre_dos_fechas(a,b,c):
+def diferencia_entre_dos_fechas(a:int,b:int,c:int) -> None:
+    """
+    calcula la diferencia entre 2 fechas, la segunda se solicitara aqui
+    pre: recibe como parametro una fecha (dia,mes,año)
+    post: Printea la diferencia de dias entre una fecha y otra.
+    """
     print("Ingrese su segunda fecha para evaluar la diferencia entre ambas.")
     a_2 = int(input("Ingrese un dia:"))
     b_2 = int(input("Ingrese un mes:"))

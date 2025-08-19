@@ -5,8 +5,9 @@ def num_mayor(a:int,b:int, c:int) ->int:
     post: Devuelve el numero mayor o, en caso de que el mismo se encuentre repetido, printea -1.
     """
     lista = [a,b,c]
-    mayor = max(lista) #designo el valor mayor y lo almaceno aca.
-    if lista.count(mayor) > 1: #cuento cuantas veces aparece el valor mayor.
+    ordenada = sorted(lista)  
+    mayor = ordenada[2]
+    if ordenada[2] == ordenada[1]: 
         print(-1)
     else:
         print(mayor)

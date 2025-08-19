@@ -1,6 +1,10 @@
 import random as rn
 
 def cant_camiones(peso):
+    """
+    
+    
+    """
     capacidad_max = 500000 # esto esta en gramos como el peso de las naranjas!!! 
     capacidad_min = 400000 
     camiones = peso // capacidad_max
@@ -30,11 +34,21 @@ def cajones_naranjas(naranjas):
     cajones = cant_cajones
     return cajones, camiones, resto, naranjas_para_jugo
             
-def validar_naranjas(naranjas):
+def validar_naranjas(naranjas:int)-> bool:
+    """
+    verifica que se ingrese una cantidad positiva de naranjas.
+    pre: Recibe como parametro la cantidad de naranjas.
+    post: Retorna True en caso de que la cantidad de naranjas sea positiva. Caso contrario, False.
+    """
     return naranjas >= 1
 
 
-def main():
+def main()->None:
+    """
+    Se ingresa una cantidad de naranjas cosechadas y notifica la informacion que la misma cosecha conlleva.
+    pre: no recibe parametros.
+    post: Printea la cantidad de naranjas sobrantes, cajas llenadas, naranjas utilizadas para jugo y cantidad de camiones utilizados.
+    """
     cant_naranjas = int(input("Ingrese la cantidad de naranjas:"))
     if validar_naranjas(cant_naranjas):
         calculos = cajones_naranjas(cant_naranjas)
