@@ -1,4 +1,4 @@
-def num_mayor(a:int,b:int, c:int) ->int: 
+def num_mayor(a:int,b:int, c:int) ->None: 
     """
     Evalua cual es el numero mayor y si se encuentra repetido.
     pre: Recibe 3 numeros enteros.

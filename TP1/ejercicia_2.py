@@ -1,4 +1,9 @@
 def validar_dia(a:int,b:int,c:int) ->bool:
+    """
+    Revisa que el dia ingresado sea correcto.
+    pre: Recibe como parametro un dia,mes y año.
+    post:Retorna True si es una fecha valida, False si es invalida.
+    """
     if b in [1,3,5,7,8,10,12]:
         return c >= 1 and c <= 31 #devuelve true si se c se encuentra en este umbral
     elif b in [4,6,9,11]:         #sino false

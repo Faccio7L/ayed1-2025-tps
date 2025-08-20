@@ -1,4 +1,4 @@
-def dia_siguiente(a:int,b:int,c:int):
+def dia_siguiente(a:int,b:int,c:int) ->int:
     """
     notifica cual es la fecha siguiente a la ingresada como parametro.
     pre: recibe como parametro 3 enteros: un dia, un mes, un año.

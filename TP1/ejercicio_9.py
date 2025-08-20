@@ -1,9 +1,10 @@
 import random as rn
 
-def cant_camiones(peso):
+def cant_camiones(peso:int) -> int:
     """
-    
-    
+    cuenta la cantidad de camiones que tienen que salir.
+    pre: recibe como parametro el peso de las naranjas.
+    post: retorna la cantidad de camiones que tienen que salir.
     """
     capacidad_max = 500000 # esto esta en gramos como el peso de las naranjas!!! 
     capacidad_min = 400000 
@@ -14,7 +15,12 @@ def cant_camiones(peso):
     return camiones
 
 
-def cajones_naranjas(naranjas):
+def cajones_naranjas(naranjas:int) -> int:
+    """
+    cuenta la cantidad de cajones, naranjas y naranjas para jugo.
+    pre: recibe como parametro la cantidad de naranjas.
+    post: retorna la cantidad de cajones, camiones, resto y naranjas para jugo. 
+    """
     naranjas_para_jugo = 0
     peso_naranja_total = 0
     cant_naranjas = 0
