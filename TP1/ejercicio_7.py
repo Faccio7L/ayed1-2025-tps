@@ -12,7 +12,7 @@ def dia_siguiente(a:int,b:int,c:int) ->int:
             
              #ya le sume 1 en la linea 3, asi que funciona joya.
         #-----------------------MESES CON 30 DIAS!------------------------------
-    if b in [4,6,9,11]:
+    elif b in [4,6,9,11]:
         if a > 30:
             a = 1
             b += 1

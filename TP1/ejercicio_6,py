@@ -10,7 +10,7 @@ def entero_a_lista(n:int) -> list[int]:
         resto_parcial = n % 10 #obtengo ultimo digito
         lista.append(resto_parcial)
         n = n//10 #elimino el ultimo EN CADA PASADA.
-    lista.reverse()
+    lista.reverse() 
     return lista
 
 
