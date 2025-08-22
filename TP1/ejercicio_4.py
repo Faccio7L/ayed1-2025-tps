@@ -48,16 +48,12 @@ def main()-> None:
     pre: No recibe parametros
     post: Muestra en pantalla cuando dinero se debe devolver.
     """
+    valores = [5000,1000,500,200,100,50,10]
     total_a_pagar = int(input("Ingrese el monto a abonar:"))
     pagado = int(input("Ingrese el monto abonado:"))
     assert total_a_pagar > 0 and pagado > 0, "Debe ingresar un monto positivo"
     billetes = pago(total_a_pagar,pagado) # lo almaceno en una variable para trabajar con la lista retornada!!!
-    print(f"El cajero debe devolver {billetes[0]} billete/s de $5000")
-    print(f"El cajero debe devolver {billetes[1]} billete/s de $1000")
-    print(f"El cajero debe devolver {billetes[2]} billete/s de $500")
-    print(f"El cajero debe devolver {billetes[3]} billete/s de $200 ")
-    print(f"El cajero debe devolver {billetes[4]} billete/s de $100")
-    print(f"El cajero debe devolver {billetes[5]} billete/s de $50")
-    print(f"El cajero debe devolver {billetes[6]} billete/s de $10")
+    for x in range(len(valores)):
+        print(f"El cajero debe devolver {billetes[x]} billetes de ${valores[x]}")
     
 main()
