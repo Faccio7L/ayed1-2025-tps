@@ -10,8 +10,6 @@ def oblongo(num:int) -> bool:
        oblongo =  x * (x + 1) 
        if num == oblongo:
            return True
-       else:
-           x += 1
     return False
 
 def triangular(num:int) -> bool:
@@ -22,9 +20,9 @@ def triangular(num:int) -> bool:
     """
     if num < 1:
         return False
-    for x in range(1, num):   
+    for x in range(1, num):   #recorre desde el 1 hasta num ingresado
         suma = 0
-        for i in range(1, x+1): #x + 1 para que corte el bucle en el valor de x.
+        for i in range(1, x+1): #suma hasta el valor de x, primero suma 1, despues 1 y 2...etc y compara
             suma += i
         if suma == num:
             return True
