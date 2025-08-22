@@ -6,11 +6,10 @@ def num_mayor(a:int,b:int, c:int) ->None:
     """
     lista = [a,b,c]
     ordenada = sorted(lista)  
-    mayor = ordenada[2]
-    if ordenada[2] == ordenada[1]: 
+    if ordenada[-1] == ordenada[-2]: 
         print(-1)
     else:
-        print(mayor)
+        print(ordenada[-1])
 
 
 def validar_valores(a:int,b:int,c:int) ->  bool:

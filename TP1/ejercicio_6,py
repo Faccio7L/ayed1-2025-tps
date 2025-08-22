@@ -1,38 +1,15 @@
-from typing import List
-def entero_a_lista(n:int) -> list[int]:
-    """
-    convierte un entero a una lista.
-    pre: Recibe un entero
-    post: Retorna el entero recibido en forma de lista, un digito = un indice.
-    """
-    lista = []
-    while n > 0:
-        resto_parcial = n % 10 #obtengo ultimo digito
-        lista.append(resto_parcial)
-        n = n//10 #elimino el ultimo EN CADA PASADA.
-    lista.reverse() 
-    return lista
+def numeros_a_str(num:int) -> int:
+     num = str(num)
+     return num
 
-
-def union_listas(a:list,b:list) -> list[int]:
-    """
-    une listas.
-    pre: Toma como parametros dos listas de enteros.
-    post: Retorna una lista extendida(toma A como principal)
-    """
-    a.extend(b)
-    return a
-
-def lista_a_entero(lista:list)-> int:
-    """
-    Transorma una lista de enteros a un numero entero.
-    pre: Recibe como parametro una lista de enteros.
-    post: Retorna un entero 
-    """
-    entero = 0
-    for digito in lista:
-        entero = entero * 10  + digito #primera pasada: 0 * 10 + 5(por ejemplo), segunda pasada: 50 + 2do digito digito,etc.
-    return entero
+def union_str(num1:str,num2:str) ->str:
+      """
+      une strs (numeros)
+      pre: recibe 2 strs
+      post: retorna los sts unidos mediante la funcion join
+      """""
+      num_unidos = "".join([num1,num2])
+      return num_unidos
 
 
 def main() -> None:
@@ -42,11 +19,9 @@ def main() -> None:
     post:Muestra en pantalla la union de dos numeros enteros.
     """
     num_1 = int(input("Ingrese un numero entero:"))
-    lista_1 = entero_a_lista(num_1)
+    num_str = numeros_a_str(num_1)
     num_2 = int(input("Ingrese otro numero entero:"))
-    lista_2 = entero_a_lista(num_2)
-    union_lista = union_listas(lista_1,lista_2)
-    union_enteros = lista_a_entero(union_lista)
-    print(f" La union de los numeros enteros es: {union_enteros}")
+    num_str_2 = numeros_a_str(num_2)
+    print(f" La union de los numeros enteros es: {union_str(num_str,num_str_2)}")
 
 main()

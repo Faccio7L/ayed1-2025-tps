@@ -9,8 +9,8 @@ def dia_siguiente(a:int,b:int,c:int) ->int:
         if a > 31:
             a = 1
             b += 1
-            
-             #ya le sume 1 en la linea 3, asi que funciona joya.
+
+             #ya le sume 1 en la linea 3, asi que funciona.
         #-----------------------MESES CON 30 DIAS!------------------------------
     elif b in [4,6,9,11]:
         if a > 30:
@@ -72,7 +72,8 @@ def verificar_mayor(a:int,b:int,c:int,a_1:int,b_2:int,c_2:int)-> bool:
                 return True
             elif a < a_1:
                 return False
-            else:print("Son el mismo dia")
+            else:
+                return False #mas adelante se dara el mensaje de "son el mismo dia"
             
         
 
