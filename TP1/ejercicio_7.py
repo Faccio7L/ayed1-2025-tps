@@ -86,10 +86,7 @@ def dia_que_sigue(a:int, b:int, c:int) -> None:
     post: printea los datos del dia siguiente.
     """
     dia,mes,año = dia_siguiente(a, b, c)
-    print(f"El dia siguiente corresponde al dia {dia}")
-    print(f"del mes {mes} ")
-    print(f"del año {año}")
-
+    print(f"El dia siguiente corresponde al dia {dia} del mes {mes} del año {año}")
 
 def sumar_N_dias(a:int,b:int,c:int) -> None:
     """
