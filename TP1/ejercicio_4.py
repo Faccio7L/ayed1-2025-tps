@@ -32,8 +32,8 @@ def main()-> None:
     elif pagado == total_a_pagar:
         print("Monto justo.")
     else:
-        billetes,valores = pago(total_a_pagar,pagado) # lo almaceno en una variable para trabajar con la lista retornada!!!
-        for b, v in zip(billetes,valores):
+        billetes,valores = pago(total_a_pagar,pagado) # lo almaceno en dos variables a la tupla
+        for b, v in zip(billetes,valores): 
             print(f"El cajero debe devolver {b} billetes de ${v}")
     
 main()
