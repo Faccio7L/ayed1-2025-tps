@@ -1,0 +1,22 @@
+def intercalar_listas(lista_1:list[int], lista_2:list[int])->list[int]:
+    """
+    Intercala listas
+    pre: Recibe como parametro dos listas
+    post: Retorna la lista intercalada.
+    """
+    indice_nuevo_num = 1
+    for num in lista_2:
+        lista_1[indice_nuevo_num:indice_nuevo_num + 1:1] = [num] #aparentemente esta linea no funciona del todo bien
+        indice_nuevo_num += 2
+    return lista_1
+
+def main()->None:
+    """
+    Crea listas e invoca una funcion para intercalarlas.
+    pre: no parametros
+    post: muestra en pantalla el resultado de la "intercalacion"
+    """
+    lista_1 = [8,1,3]
+    lista_2 = [22,4,18]
+    print(f"Las listas intercaladas son: {intercalar_listas(lista_1,lista_2)}")
+main()

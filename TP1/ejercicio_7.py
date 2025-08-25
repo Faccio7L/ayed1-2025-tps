@@ -85,10 +85,10 @@ def dia_que_sigue(a:int, b:int, c:int) -> None:
     pre: Obtiene una fecha con su respectivo dia mes y año
     post: printea los datos del dia siguiente.
     """
-    tupla_dia_siguiente = dia_siguiente(a, b, c)
-    print(f"El dia siguiente corresponde al dia {tupla_dia_siguiente[0]}")
-    print(f"del mes {tupla_dia_siguiente[1]} ")
-    print(f"del año {tupla_dia_siguiente[2]}")
+    dia,mes,año = dia_siguiente(a, b, c)
+    print(f"El dia siguiente corresponde al dia {dia}")
+    print(f"del mes {mes} ")
+    print(f"del año {año}")
 
 
 def sumar_N_dias(a:int,b:int,c:int) -> None:
@@ -99,11 +99,8 @@ def sumar_N_dias(a:int,b:int,c:int) -> None:
     """
     numero = int(input("Ingrese cuantos dias quiere sumar:"))
     for x in range(numero): #esta parte se complico un poco... la funcion dia siguiente esta preparada para pasar de a un num  y la consigna pide que no la modifique, asi que le paso los num de una.
-        lista_dia_usuario = dia_siguiente(a,b,c)
-        a = lista_dia_usuario[0]
-        b = lista_dia_usuario[1]
-        c = lista_dia_usuario[2]
-    print(f"El dia obtenido es {lista_dia_usuario[0]} del mes {lista_dia_usuario[1]} del año {lista_dia_usuario[2]}")
+        a, b, c = dia_siguiente(a,b,c)
+    print(f"El dia obtenido es {a} del mes {b} del año {c}")
 
 def diferencia_entre_dos_fechas(a:int,b:int,c:int) -> None:
     """

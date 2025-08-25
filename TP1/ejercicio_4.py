@@ -15,7 +15,7 @@ def pago(a:int,b:int)-> list:
         cantidad = vuelto // valor     
         vuelto = vuelto % valor        
         cantidades.append(cantidad)    
-    return cantidades
+    return cantidades,valores
 
 def main()-> None:
     """
@@ -23,7 +23,7 @@ def main()-> None:
     pre: No recibe parametros
     post: Muestra en pantalla cuando dinero se debe devolver.
     """
-    valores = [5000,1000,500,200,100,50,10]
+    
     total_a_pagar = int(input("Ingrese el monto a abonar:"))
     pagado = int(input("Ingrese el monto abonado:"))
     assert total_a_pagar > 0 and pagado > 0, "Debe ingresar un monto positivo"
@@ -32,7 +32,7 @@ def main()-> None:
     elif pagado == total_a_pagar:
         print("Monto justo.")
     else:
-        billetes = pago(total_a_pagar,pagado) # lo almaceno en una variable para trabajar con la lista retornada!!!
+        billetes,valores = pago(total_a_pagar,pagado) # lo almaceno en una variable para trabajar con la lista retornada!!!
         for b, v in zip(billetes,valores):
             print(f"El cajero debe devolver {b} billetes de ${v}")
     
