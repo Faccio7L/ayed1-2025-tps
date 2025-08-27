@@ -11,7 +11,8 @@ def union_str(num1:str,num2:str) ->str:
       num_unidos = "".join([num1,num2])
       return num_unidos
 
-
+def verificar_positivos(num, num_2):
+     return num > 0 and num_2 > 0
 def main() -> None:
     """
     Se ingresan 2 numeros enteros, se invoca otras funciones para finalmente mostrar la union de los mismos.
@@ -22,6 +23,10 @@ def main() -> None:
     num_str = numeros_a_str(num_1)
     num_2 = int(input("Ingrese otro numero entero:"))
     num_str_2 = numeros_a_str(num_2)
-    print(f" La union de los numeros enteros es: {union_str(num_str,num_str_2)}")
+    if verificar_positivos(num_1,num_2):  
+        print(f" La union de los numeros enteros es: {union_str(num_str,num_str_2)}")
+    else: 
+         print("Ingrese dos numeros positivos")
+      
 
 main()
