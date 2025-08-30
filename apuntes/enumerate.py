@@ -1,3 +1,4 @@
+from functools import reduce
 #salida = vuelto(pago,billete) #dos datos.
 #for i, s in enumerate(salida): #i indice. Retorna tupla.
     #if s: #0 lo interpreta como False.
@@ -30,3 +31,60 @@ print(nom_ape)
 #join convierte un iterable a str.
 
 #divmod
+
+
+#Clase 4.
+#Lambda.
+def square(num:int) -> int:
+    return num ** 2
+#es lo mismo que 
+square = lambda x: x ** 2 #square es funcion lambda. NO variable.
+lambda_func = lambda x: x**2 >= 10 #retorna True o False.
+
+#Funciones de orden superior.
+#map,filter,reduce()
+#map: Agarro un iterable, por cada elemnento lo "proceso" mediante una funcion, si entran 100 salen 100.
+#Filter: Filtra con True o False. "Pasan" los True. ej: es_citrico y le paso frutas.
+#Reduce: Toma todos los datos y retorna uno solo.
+
+def map_(funcion,lista)-> list[int]: #SOLO nombre de la funcion, sin parentesis.
+    for i, e in enumerate(lista): #primero consulta indice y dsp el elemento el enumerate.
+        lista[i] = funcion(e)
+    return lista
+  
+def doble(x):
+    return x * 2
+
+lista = [1,2,3,4]
+print(map_(doble,lista))
+
+list_por_comprension = [x for x in range(1,11)] #lista por comprension.
+
+
+
+def map_(funcion,lista)-> list[int]: #SOLO nombre de la funcion, sin parentesis.
+    for i, e in enumerate(lista): #primero consulta indice y dsp el elemento el enumerate.
+        lista[i] = funcion(e)
+    return lista
+print(map_(doble,list_por_comprension))
+list_por_comprension = [x for x in range(1,31)]
+lista_modificada_lambda_map = list(map(lambda x: x*2,list_por_comprension)) #ESTA ES LA FUNCION CORRECTA.
+print(lista_modificada_lambda_map)
+lista_modificada_filter = list(filter(lambda x: x%3 == 0,list_por_comprension))
+print(lista_modificada_filter)
+
+lista = ["uno","dos","tres"]
+salida = list(map(lambda palabra: palabra.title(),lista)) 
+print(salida)
+salida = list(map(lambda palabra: palabra.upper(),lista))
+print(salida)
+print(list(filter(lambda x: not x % 2, [1,2,3,4,5])))
+#importo reduce.
+producto = reduce((lambda x,y : x*y),[1,2,3,4])
+print(producto) 
+
+#castear booleanos
+print(int(True))
+enteros = [True,False]
+suma = reduce(lambda a, b: a + b,enteros)
+print(suma)

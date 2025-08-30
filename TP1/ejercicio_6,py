@@ -14,7 +14,7 @@ def union_str(num1:str,num2:str) ->str:
 def verificar_positivos(num, num_2):
      return num > 0 and num_2 > 0
 def main() -> None:
-    """
+    """                                    
     Se ingresan 2 numeros enteros, se invoca otras funciones para finalmente mostrar la union de los mismos.
     pre:No recibe parametros
     post:Muestra en pantalla la union de dos numeros enteros.
