@@ -52,19 +52,18 @@ def dia_mas_productivo(matriz:list[list]) -> int:
     pre: Recibe como parametro una matriz
     post: Retorna el dia con mayor ventas
     """
-    ventas_por_dia = []
+    ventas = [0,0,0,0,0,0]
     
-    dia = 0
+
     for fila in matriz:
-        dia = 0
-        for i, columna in enumerate(fila):
-            dia += columna
-        ventas_por_dia.append(dia)
-    dia_mayor_prod = max(ventas_por_dia)
-    dia = ventas_por_dia.index(dia_mayor_prod)
+        for i, columna in enumerate(fila):  
+            ventas[i] += columna
+    venta_maxima = max(ventas)    
+    dia_venta_maxima = ventas.index(venta_maxima)
+    return dia_venta_maxima
 
             
-    return  dia + 1
+    
         
 def lista_por_comprension(matriz:list[list])->list[int]:
     """
