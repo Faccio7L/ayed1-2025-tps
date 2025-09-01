@@ -67,7 +67,7 @@ def map_(funcion,lista)-> list[int]: #SOLO nombre de la funcion, sin parentesis.
         lista[i] = funcion(e)
     return lista
 print(map_(doble,list_por_comprension))
-list_por_comprension = [x for x in range(1,31)]
+list_por_comprension = [x for x in range(1,31)] #1: elemento QUE voy a guardar. 2: Variable. 3: ITERABLE. 4: CONDICION
 lista_modificada_lambda_map = list(map(lambda x: x*2,list_por_comprension)) #ESTA ES LA FUNCION CORRECTA.
 print(lista_modificada_lambda_map)
 lista_modificada_filter = list(filter(lambda x: x%3 == 0,list_por_comprension))
@@ -85,6 +85,6 @@ print(producto)
 
 #castear booleanos
 print(int(True))
-enteros = [True,False]
-suma = reduce(lambda a, b: a + b,enteros)
+enteros = [True,False] # 1 y 0 
+suma = reduce(lambda a, b: a + b,enteros) #1 + 0
 print(suma)
