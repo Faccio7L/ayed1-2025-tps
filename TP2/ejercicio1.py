@@ -5,7 +5,7 @@ def cuatro_numeros_random(lista:list) ->list[int]:
     pre: Recibe una lista vacia
     post: Retorna una lista con 4 numero.
     """
-    for x in range(4):
+    for x in range(rn.randint(1,100)):
         lista.append(rn.randint(1000,9999))
     return lista
 

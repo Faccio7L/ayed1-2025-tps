@@ -52,12 +52,12 @@ def dia_mas_productivo(matriz:list[list]) -> int:
     pre: Recibe como parametro una matriz
     post: Retorna el dia con mayor ventas
     """
-    ventas = [0,0,0,0,0,0]
+    ventas = [0,0,0,0,0,0] #lunes, martes...
     
 
     for fila in matriz:
         for i, columna in enumerate(fila):  
-            ventas[i] += columna
+            ventas[i] += columna #primero en el sub 0 agrega el primer valor, despues el primer valor del sub 1...etc y dsp se repite
     venta_maxima = max(ventas)    
     dia_venta_maxima = ventas.index(venta_maxima)
     return dia_venta_maxima
