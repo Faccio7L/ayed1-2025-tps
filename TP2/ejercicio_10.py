@@ -10,6 +10,6 @@ def main()->None:
     for x in range(50):
         lista.append(rn.randint(1,100))
     print(list(filter(lambda x:  x % 2 == 1, lista)))
-    print(lista) #lo hice en este orden para ver si el filter altera la lista original, conclusion: No la altera.
+    print(lista) 
 main()
     
