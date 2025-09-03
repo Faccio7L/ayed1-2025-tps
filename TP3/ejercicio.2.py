@@ -1,17 +1,24 @@
 def patron_a(matriz):
     
     num = 1
-    for i in range(len(matriz)):
-            matriz[i][i] = num
+    indice = 0 
+    for f in matriz:
+        for c in (f):
+            f[indice] = num
             num += 2
+            indice += 1 #no trabajo con el indice de elemento por que sino siempre es [0] antes del break!
+            break
     return matriz
 
 def patron_b(matriz):
     num = 27
     #step_de_rebanada = -1
-    for i in range(len(matriz)):
-          matriz[i][len(matriz) -1 - i] = num #el -1 para que no se vaya de rango, trabajo con indice y len calcula el largo
-          num = num ** 0.5
+    for i, f in enumerate(matriz):
+          for i2, e in enumerate(f):
+             if i2 == i:
+                f[-i2 - 1] = num 
+                num = num // 3
+                break
     return matriz
 def patron_c(matriz):
      
@@ -103,5 +110,5 @@ def main():
         for c in range(tamaño):
             fila.append(0) #hasta aca son listas de 0!!
         matriz.append(fila) #aca ya son filas de la matriz!!!
-    
+    print(patron_b(matriz))
 main()
