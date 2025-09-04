@@ -1,17 +1,16 @@
 #No se me ocurrio como hacerlo
-def normalizar_lista(lista:list[int] = [3,2,4,3,4]) -> list[float]:
+def normalizar_lista(lista:list[int] = [3,2,6,3,4]) -> list[float]:
     """
     toma una lista y utiliza la formula de normalizacion de datos.
     pre: Recibe como parametro una lista de enteros.
     post: Retorna una lista de flotantes, el ultimo elemento es la suma de los mismos.
     """
-    i = 0
+    
     minimo = min(lista)
     maximo = max(lista)
-    for x in lista:
+    for i,x in enumerate(lista):
         normalizar_elemento = (x - minimo) / (maximo - minimo)
         lista[i] = normalizar_elemento #reemplazo en el sub i (primero 0, despues 1) el valor normalizado.
-        i += 1
     return lista
 
 

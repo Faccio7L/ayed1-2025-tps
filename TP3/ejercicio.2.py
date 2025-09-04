@@ -1,5 +1,9 @@
-def patron_a(matriz):
-    
+def patron_a(matriz:list[list])->list[list]:
+    """
+    Carga una matriz en un patron especificado.
+    pre: No recibe parametros
+    post: Retorna la matriz 
+    """
     num = 1
     indice = 0 
     for f in matriz:
@@ -10,7 +14,12 @@ def patron_a(matriz):
             break
     return matriz
 
-def patron_b(matriz):
+def patron_b(matriz:list)->list[list]:
+    """
+    Carga una matriz en un patron especificado.
+    pre: No recibe parametros
+    post: Retorna la matriz 
+    """
     num = 27
     #step_de_rebanada = -1
     for i, f in enumerate(matriz):
@@ -20,52 +29,79 @@ def patron_b(matriz):
                 num = num // 3
                 break
     return matriz
-def patron_c(matriz):
-     
+def patron_c(matriz:list)->list[list]:
+    """
+    Carga una matriz en un patron especificado.
+    pre: No recibe parametros
+    post: Retorna la matriz 
+    """
+    antes_del_break = 0
     num_inicial = len(matriz) + 1
-    for x in range(num_inicial -1):
+    for i, f in enumerate(matriz):
           num_inicial -= 1
-          for cantidad in range(x + 1):
-            matriz[x][cantidad] = num_inicial
+          for i2, e in enumerate(f):
+            matriz[i][i2] = num_inicial
+            if i2 == antes_del_break:
+                antes_del_break += 1
+                break
+
     return matriz
           
-def patron_d(matriz):
+def patron_d(matriz:list)->list[list]:
+    """
+    Carga una matriz en un patron especificado.
+    pre: No recibe parametros
+    post: Retorna la matriz 
+    """
     num_inicial = len(matriz) * 2
     largo = len(matriz)
     
-    for fila in range(largo):
-        for columna in range(largo):
-            matriz[fila][columna] = num_inicial
+    for i, fila in enumerate(matriz):
+        for i2,columna in enumerate(fila):
+            fila[i2] = num_inicial
         num_inicial = num_inicial // 2
     return matriz
 
-def patron_e(matriz):
-    i = 0 #en la primera pasada va a terminar valiendo uno (esto es indice.)
+def patron_e(matriz:list)->list[list]:
+    """
+    Carga una matriz en un patron especificado.
+    pre: No recibe parametros
+    post: Retorna la matriz 
+    """
+   
     valor_inicial = 1
-    largo = len(matriz)
-    for fila in range(largo):
-        if i == 1: #i en una pasada vale uno, en la otra 0, etc.
-            i = 0
-        else:
-            i = 1 
-        for columna in range(fila):
-            matriz[fila][i] = valor_inicial
-            valor_inicial += 1
-            matriz[fila][i+2] = valor_inicial
+    for i,fila in enumerate(matriz):
+        for i2,e in enumerate(fila):
+            if i % 2 == 0: #para filas pares, appendeo en ELEMENTOS impares
+                if i2 % 2 == 1:
+                    matriz[i][i2] = valor_inicial
+                    valor_inicial += 1
+            else: #exactamente lo contrario!
+                if i2 % 2 == 0:
+                    matriz[i][i2] = valor_inicial
+                    valor_inicial += 1
     return matriz
             
-def patron_f(matriz)-> list[list]:
+def patron_f(matriz:list)-> list[list]:
+    """
+    Carga una matriz en un patron especificado.
+    pre: No recibe parametros
+    post: Retorna la matriz 
+    """
     valor_inicial = 1
-    largo = len(matriz)
-    cantidad_por_fila = largo #lo almaceno aca por que esta variable la voy a modificar, largo no.
-    for fila in range(largo):
-        for columna in range(fila):
-            matriz[fila][largo - 1 - columna] = valor_inicial
+    for i,f in enumerate(matriz):
+        agregados = 0
+        for i2,c in enumerate(f):
+            matriz[i][-i2 - 1] = valor_inicial # indice negativo -1 por que -0 no existe, - 1 seria como 0 desde la derecha, -2 como 1,etc.
+            agregados += 1
             valor_inicial += 1
+            if  agregados == i + 1:
+                 break
+            
 
     return matriz
 
-def patron_g(matriz) -> list[list]:
+def patron_(matriz) -> list[list]:
     """
     Esta funcion esta hardcodeada, tendria que encontrar una forma de reemplazar
     los numeros por variables, no encuentro un patron para trabajarlos bien.
@@ -96,13 +132,30 @@ def patron_g(matriz) -> list[list]:
         matriz[columna][1] = inicial
     return matriz
             
-
-            
-          
+def patron_g(matriz) -> list[list]:
+    inicial = 1
+    for i,fila in enumerate(matriz):
+        for i2, e in enumerate(fila):
+            if i % 2 == 1: #osea si la fila es impar
+                if  fila[i2] == 0:
+                    fila[i2] = inicial
+                    inicial += 1 
+    
+            else:
+                if matriz[i][i2 - 1] == 0:
+                    matriz[i][-i2 -1] = inicial
+                    inicial += 1
+                    break
+    return matriz
 
 
           
 def main():
+    """
+    Se crea una matriz con las dimensiones solicitadas por el usuario.
+    pre: No recibe parametros
+    post: Muestra en pantalla algun patron, podria modificarse para que muestre todas pero no lo considere necesario!!
+    """
     tamaño = int(input("Ingrese el tamaño de la matriz:"))
     matriz = []
     for f in range(tamaño): #range por qeu es no iterable
@@ -110,5 +163,5 @@ def main():
         for c in range(tamaño):
             fila.append(0) #hasta aca son listas de 0!!
         matriz.append(fila) #aca ya son filas de la matriz!!!
-    print(patron_b(matriz))
+    print(patron_g(matriz))
 main()
