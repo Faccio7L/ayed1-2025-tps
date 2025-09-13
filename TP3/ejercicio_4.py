@@ -86,7 +86,7 @@ def main () ->None:
     cantidad = int(input("Ingrese cuantas fabricas tiene:"))
     matriz = (matriz_random(cantidad))
     print(matriz)
-    for i, c in enumerate(fabricadas_por_fabrica(matriz)):
+    for i, c in enumerate(fabricadas_por_fabrica(matriz)): #recorro indice(osea num de fabrica) y total vendido.
         print(f"La fabrica {i+1} vendio un total de {c}")
     maximo_dia_ventas, indice, fila = mayor_produccion(matriz)
     print(f"El dia de mayor produccion fue {dias[indice]} y es la fabrica numero {fila +1}")

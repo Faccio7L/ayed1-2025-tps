@@ -60,10 +60,12 @@ def main() -> None:
     mes = int(input("Ingrese un mes:"))
     anio = int(input("Ingrese un año:"))
     if validar_fecha(mes):
-        for x in range(1, cantidad_dias(mes,anio) + 1): 
+        lista_numerica = [x for x in range(1,cantidad_dias(mes,anio) + 1)]
+        for x in range(1, cantidad_dias(mes,anio) + 1):    
             num = (diadelasemana(x,mes,anio)) #x (osea dia) vale uno mas con cada iteracion.
             lista.append(numero_a_dia(num))
-        print(lista)
+        for num, dia in zip(lista_numerica,lista):
+            print(f"{num,dia}")
     else:
         print("Fecha invalida.")
 

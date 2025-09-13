@@ -1,32 +1,49 @@
-def numeros_a_str(num:int) -> int:
-     num = str(num)
-     return num
+from typing import List
 
-def union_str(num1:str,num2:str) ->str:
-      """
-      une strs (numeros)
-      pre: recibe 2 strs
-      post: retorna los sts unidos mediante la funcion join
-      """""
-      num_unidos = "".join([num1,num2])
-      return num_unidos
 
-def verificar_positivos(num, num_2):
-     return num > 0 and num_2 > 0
-def main() -> None:
-    """                                    
-    Se ingresan 2 numeros enteros, se invoca otras funciones para finalmente mostrar la union de los mismos.
-    pre:No recibe parametros
-    post:Muestra en pantalla la union de dos numeros enteros.
+
+def entero_a_lista(n: int) -> list[int]:
     """
-    num_1 = int(input("Ingrese un numero entero:"))
-    num_str = numeros_a_str(num_1)
-    num_2 = int(input("Ingrese otro numero entero:"))
-    num_str_2 = numeros_a_str(num_2)
-    if verificar_positivos(num_1,num_2):  
-        print(f" La union de los numeros enteros es: {union_str(num_str,num_str_2)}")
-    else: 
-         print("Ingrese dos numeros positivos")
-      
+    Convierte un entero a una lista de sus dígitos.
+    pre: Recibe un entero.
+    post: Retorna el entero recibido en forma de lista, un dígito = un índice.
+    """
+    lista = []
+    while n > 0:
+        lista.append(n % 10)
+        n = n // 10
+    lista.reverse()
+    return lista
+
+
+def lista_a_entero(lista: list[int]) -> int:
+    """
+    Transforma una lista de enteros en un número entero.
+    pre: Recibe una lista de enteros.
+    post: Retorna un entero.
+    """
+    entero = 0
+    for digito in lista:
+        entero = entero * 10 + digito #corro un 0 y agrego el digito!
+    return entero
+
+
+def main() -> None:
+    """
+    Muestra en pantalla la unión de dos números enteros usando solo operaciones matemáticas.
+    """
+    num_1 = int(input("Ingrese un número entero: "))
+    lista_1 = entero_a_lista(num_1)
+
+    num_2 = int(input("Ingrese otro número entero: "))
+    lista_2 = entero_a_lista(num_2)
+
+    union_lista = lista_1 + lista_2  
+    union_enteros = lista_a_entero(union_lista)
+    print(f"La unión de los números enteros es: {union_enteros}")
+
 
 main()
+
+
+

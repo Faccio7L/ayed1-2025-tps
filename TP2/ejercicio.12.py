@@ -31,7 +31,7 @@ def socio_de_baja(socio:int,lista_socio:list[int],lista_visitas:list[int])->None
         lista_visitas.pop(i) #aca uso pop por que elimino el indice i, con remove elimino EL VALOR del indice.          
     
 
-    
+
 
 def main()->None:
     """
@@ -59,7 +59,5 @@ def main()->None:
     dar_de_baja = int(input("Ingrese un numero de socio para dar de baja:"))
     socio_de_baja(dar_de_baja,lista_socios,lista_visitas)
     for s, v in zip(lista_socios,lista_visitas): #printeo las listas actualizadas solo para demostrar que funciona mi funcion.
-        print(f"La cantidad de veces que ingreso el socio {s} es de {v} veces")
-
-            
+        print(f"La cantidad de veces que ingreso el socio {s} es de {v} veces")    
 main()

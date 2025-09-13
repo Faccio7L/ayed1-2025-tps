@@ -55,11 +55,11 @@ def map_(funcion,lista)-> list[int]: #SOLO nombre de la funcion, sin parentesis.
 def doble(x):
     return x * 2
 
-lista = [1,2,3,4]
+lista = [3,3,3,3]
 print(map_(doble,lista))
 
 list_por_comprension = [x for x in range(1,11)] #lista por comprension.
-
+lista = [3,3,3,3]
 
 
 def map_(funcion,lista)-> list[int]: #SOLO nombre de la funcion, sin parentesis.
@@ -88,3 +88,54 @@ print(int(True))
 enteros = [True,False] # 1 y 0 
 suma = reduce(lambda a, b: a + b,enteros) #1 + 0
 print(suma)
+
+
+#otra vez listas por comprension
+numeros = [2,3,5]
+num_cubos = []
+for num in numeros:
+    num_cubos.append(num**3)
+print(num_cubos)
+#manera correcta:
+numeros = [2,3,5]
+num_cubos = []
+num_cubos = [num**3 for num in numeros]
+print(num_cubos)
+lista = [i for i in range(1,11)]
+print(lista)
+
+#MUY UTIL
+cadena = "estoy aprendiendo Python3 en 2022"
+
+digitos = [char for char in cadena if char.isdigit()]
+#cuando no uso else va al final la condicion, caso contrario van al principio
+print(digitos)
+#caso con else
+digitos = [char if char.isdigit() else char.upper() for char in cadena] #clave para tp4.
+print(digitos)
+#otra vez join!
+paises = ["Argentina", "Uruguay", "Chile", "Paraguay", "Brasil", "Bolivia"]
+paises_string = ",".join(paises) # con que los uno, join e iterable.
+print(paises_string)
+
+#split hace lo mismo, pero al reves.
+nombre_string = "Mi nombre es Mariano"
+nombre_lista = nombre_string.split(" ") ## maxsplit seteado a 2
+print(nombre_lista)
+
+nombre_lista[-1] = "Mateo"
+print(nombre_lista)
+cadena = " ".join(nombre_lista)
+#cadena = nombre_lista[0] + " " + nombre_lista[1] + ......
+
+print(cadena)
+lista = [9,3,2]
+lista[1:1] = [5]
+print(lista)
+
+#Libreria RE
+
+
+cadenas = ["A123", "B456", "C789", "123A", "D3214"]
+# una letra mayúscula o minúscula y 3 números del 1 al 3
+patron = "[A-Za-z][1-3]{3}" #Busca que empiece con una letra y despues 3 numeros del 1 al 3.

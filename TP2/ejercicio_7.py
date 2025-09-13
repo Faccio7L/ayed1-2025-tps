@@ -17,10 +17,10 @@ def main()->None:
     post: muestra en pantalla el resultado de la "intercalacion"
     """
     lista_1 = [8,1,3,]
-    lista_2 = [22,4,18]
+    lista_2 = [22,4,18,19]
     ver_mas_larga = (lambda x,y:  len(x) > len(y),lista_1,lista_2 )
     if ver_mas_larga:
-        print(f"Las listas intercaladas son: {intercalar_listas(lista_1,lista_2)}")
+        print(f"Las listas intercaladas son: {intercalar_listas(lista_2,lista_1)}")
     else:
-         print(f"Las listas intercaladas son: {intercalar_listas(lista_2,lista_1)}")
+         print(f"Las listas intercaladas son: {intercalar_listas(lista_1,lista_2)}")
 main()
