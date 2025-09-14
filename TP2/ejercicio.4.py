@@ -9,11 +9,9 @@ def modificar_lista(lista:list[int],lista_2:list[int])->tuple:
     post: Retorna la lista sin los elementos repetidos.
     """
    
-    for elemento in lista:
-        if elemento in lista_2:
-            lista.remove(elemento)
+    lista_modificada = [x for x in lista if x not in lista_2]
             
-    return lista
+    return lista_modificada
 
 def main()->None:
     """
