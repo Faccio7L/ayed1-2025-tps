@@ -30,3 +30,9 @@ def main() -> None:
     else:
         print("Fecha no valida.")
 main()
+
+#pruebas
+assert validar_dia(31,12,2000) == True
+assert validar_dia(29,2,2001) == False
+assert validar_dia(11,11,2000) == True
+assert validar_dia(32,11,2000) == False
