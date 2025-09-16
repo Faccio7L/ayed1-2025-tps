@@ -10,15 +10,14 @@ def cuatro_numeros_random(lista:list) ->list[int]:
     return lista
 
 
-def eliminar_de_La_lista(lista:list[int]) -> bool:
+def eliminar_de_La_lista(lista:list[int],numero) -> bool:
     """
     Elimina un numero de una lista en caso de que exista.
     pre: recibe la lista de enteros
     post: Retorna la lista con el numero eliminado.
     """
-    numero_a_eliminar = int(input("Ingrese un numero que desea eliminar:"))
-    if numero_a_eliminar in lista:
-        lista.remove(numero_a_eliminar)
+    while numero in lista:
+        lista.remove(numero)
     return lista
     
 def lista_capicua(lista:list[int]) -> bool:
@@ -49,7 +48,8 @@ def main()-> None:
     lista = []
     print(f"La lista generada de manera aleatoria es {cuatro_numeros_random(lista)}")
     print(f"El producto de la lista anterior es {calcular_producto(lista)}")
-    print(f"Ahora la lista es {eliminar_de_La_lista(lista)}")
+    numero_a_eliminar = int(input("Ingrese un numero que desea eliminar:"))
+    print(f"Ahora la lista es {eliminar_de_La_lista(lista,numero_a_eliminar)}")
     if lista_capicua(lista):
         print("Su lista es capicua")
     else:
