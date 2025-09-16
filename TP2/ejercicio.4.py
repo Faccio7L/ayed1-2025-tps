@@ -3,7 +3,7 @@ import random as rn
 def modificar_lista(lista:list[int],lista_2:list[int])->tuple:
     """
     Modifica una lista en base a los numeros que hay en comun en ambas, por cada elemento
-    repetido lo elimina UNA vez de la lista, a no ser que vuelva a encontrarse en la lista 2.
+    repetido lo elimina de la lista, a no ser que vuelva a encontrarse en la lista 2.
     principal.
     pre: Recibe como parametro dos listas de enteros.
     post: Retorna la lista sin los elementos repetidos.

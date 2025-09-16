@@ -11,8 +11,22 @@ def cantidad_de_consultas(lista_afiliados:list[int], lista_cantidades:list[int],
         lista_afiliados.append(afiliado) 
         lista_cantidades.append(1)
 
+def buscar_consultas_y_emergencias(num,turnos,cant_turnos,emergencias,cant_emergencias):
+    """
+    Busca un afiliado en la lista de turnos y/o emergencias y muestra cuantas veces se atendieron
+    se appendean en orden asi que se puede trabajar con los indices!
+    pre:recibe como parametro las cantidades de consultas y sus numeros de afiliados()
+    post: Muestra en pantalla la cantidad de consultas y emergencias del paciente
+    solicitado!
+    """
+    if num in turnos:
+        i = turnos.index(num)
+        print(f"El afiliado {num} fue atendido {cant_turnos[i]} veces con turno")
+    if num in emergencias:
+            emergencias.index(num)
+            i = emergencias.index(num)
+            print(f"El afiliado {num} fue atendido {cant_emergencias[i]} veces por urgencia ")
     
-
 def validar_numero_de_afiliado(num_afiliado:int) -> bool:
     """
     Retorna True en caso de que el numero de afiliado sea valido.
@@ -63,5 +77,17 @@ def main()->None:
         print(f"el paciente {l} se atendio por urgencias {c} vez/veces")
     for l, c in zip(lista_turnos,lista_cantidad_turnos):
         print(f"El paciente {l} se atendio con turno {c} vez/veces")
-   
+    while True:
+        num_afiliado = int(input("Ingrese un afiliado para buscar(0 para salir):"))
+        if num_afiliado == -1:
+            break
+        if validar_numero_de_afiliado(num_afiliado):
+            if num_afiliado in lista_turnos:
+                i = lista_turnos.index(num_afiliado)
+                print(f"El afiliado {num_afiliado} fue atendido {lista_cantidad_turnos[i]} veces con turno")
+            if num_afiliado in lista_urgencias:
+                lista_urgencias.index(num_afiliado)
+                i = lista_urgencias.index(num_afiliado)
+                print(f"El afmiliado {num_afiliado} fue atendido {lista_cantidad_urgencias[i]} veces por urgencia ")
+    
 main()
