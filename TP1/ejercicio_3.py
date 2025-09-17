@@ -13,7 +13,7 @@ def cant_viajes(viajes:int) -> int :
     elif viajes > 40:
         return viajes * 600
     else:
-        print("Ingrese un numero de viajes valido.")
+        False
     
 
 def main() -> None:
@@ -23,7 +23,9 @@ def main() -> None:
     post: Printea el monto a abonar.
     """
     cantidad_de_viajes = int(input("Ingrese la cantidad de viajes del mes:"))
-    if cant_viajes(cantidad_de_viajes) != None: #si entra en el Else retorna None
+    if cant_viajes(cantidad_de_viajes): #si entra en el Else retorna None
         print(f"El monto a abonar es: ${cant_viajes(cantidad_de_viajes)}")
+    else:
+        print("Ingrese un numero positivo.")
 
 main()
