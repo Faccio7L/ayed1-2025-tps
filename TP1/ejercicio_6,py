@@ -41,13 +41,17 @@ def main() -> None:
     pre:No recibe parametros
     post:Muestra en pantalla la union de dos numeros enteros.
     """
-    num_1 = int(input("Ingrese un numero entero:"))
+    validacion = (lambda x,y: x > 0 and y > 0)
+    num_1 = int(input("Ingrese un numero positivo:"))
     lista_1 = entero_a_lista(num_1)
-    num_2 = int(input("Ingrese otro numero entero:"))
+    num_2 = int(input("Ingrese otro numero positivo:"))
     lista_2 = entero_a_lista(num_2)
-    union_lista = lista_1 + lista_2
-    union_enteros = lista_a_entero(union_lista)
-    print(f" La union de los numeros enteros es: {union_enteros}")
+    if validacion:
+        union_lista = lista_1 + lista_2
+        union_enteros = lista_a_entero(union_lista)
+        print(f" La union de los numeros enteros es: {union_enteros}")
+    else:
+        print("Debe ingresar dos numeros positivos")
 
 main()
 
