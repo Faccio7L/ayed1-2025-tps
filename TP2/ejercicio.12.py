@@ -23,12 +23,14 @@ def socio_de_baja(socio:int,lista_socio:list[int],lista_visitas:list[int])->None
     """
     Verifica que el socio exista y lo da de baja.
     pre: recibe como parametro el socio a eliminar, su elemento de la lista de socios y sus visitas.
-    post: Modifica la listas y elimina datos.
+    post: Modifica la listas y elimina datos. Ahora tambien retorna la cantidad de ingresos eliminados!
     """
+    eliminaciones = 0
     if socio in lista_socio:
         i = lista_socio.index(socio)
         lista_socio.remove(socio)
-        lista_visitas.pop(i) #aca uso pop por que elimino el indice i, con remove elimino EL VALOR del indice.          
+        eliminacion = lista_visitas.pop(i) #aca uso pop por que elimino el indice i, con remove elimino EL VALOR del indice. 
+    return eliminacion
     
 
 
@@ -57,7 +59,8 @@ def main()->None:
         print(f"La cantidad de veces que ingreso el socio {s} es de {v} veces")
     
     dar_de_baja = int(input("Ingrese un numero de socio para dar de baja:"))
-    socio_de_baja(dar_de_baja,lista_socios,lista_visitas)
+    baja = socio_de_baja(dar_de_baja,lista_socios,lista_visitas)
     for s, v in zip(lista_socios,lista_visitas): #printeo las listas actualizadas solo para demostrar que funciona mi funcion.
-        print(f"La cantidad de veces que ingreso el socio {s} es de {v} veces")    
+        print(f"La cantidad de veces que ingreso el socio {s} es de {v} veces")   
+    print(f"Se eliminaron un total de {baja} visitas") 
 main()

@@ -1,6 +1,6 @@
 import random as rn
 
-def lista_4_digitos(cant_numeros:int,lista:list)-> list[int]:
+def lista_numeros(cant_numeros:int,lista:list)-> list[int]:
     """
     Completa con la cantidad de numeros elegidos por el usuario una lista    
     pre: Recibe como parametro la lista vacia y la cantidad de numeros a appendear.
@@ -48,7 +48,7 @@ def main()->None:
     """
     lista = []
     cantidad_de_numeros = int(input("Ingrese cuantos numeros desea en la lista:"))
-    print(f"La lista generada es:{lista_4_digitos(cantidad_de_numeros,lista)}")
+    print(f"La lista generada es:{lista_numeros(cantidad_de_numeros,lista)}")
     if verificar_elementos_repetidos(lista):
         print("Hay elementos repetidos.")
     else:

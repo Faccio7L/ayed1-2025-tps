@@ -27,8 +27,8 @@ def main()-> None:
 main()
 #el max es 1!!! (o muy proximo a uno, ya que a veces se redondean decimales.)
 resultado =  max(normalizar_lista([9,2,9,3]) )
-assert resultado > 0.99 and resultado < 1.01
+assert resultado == 1
 resultado =  max(normalizar_lista([13,11,1,28]))
-assert resultado > 0.99 and resultado < 1.01
+assert resultado == 1
 resultado = max(normalizar_lista([4,2,3,1,2])) == 1
-assert resultado > 0.99 and resultado < 1.01
+assert resultado == 1
