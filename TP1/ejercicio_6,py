@@ -46,7 +46,7 @@ def main() -> None:
     lista_1 = entero_a_lista(num_1)
     num_2 = int(input("Ingrese otro numero positivo:"))
     lista_2 = entero_a_lista(num_2)
-    if validacion:
+    if validacion(num_1,num_2):
         union_lista = lista_1 + lista_2
         union_enteros = lista_a_entero(union_lista)
         print(f" La union de los numeros enteros es: {union_enteros}")
