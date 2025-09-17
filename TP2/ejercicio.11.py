@@ -10,22 +10,6 @@ def cantidad_de_consultas(lista_afiliados:list[int], lista_cantidades:list[int],
     else: #no busco indice por que no esta, appendeo 1 en cantidad
         lista_afiliados.append(afiliado) 
         lista_cantidades.append(1)
-
-def buscar_consultas_y_emergencias(num,turnos,cant_turnos,emergencias,cant_emergencias):
-    """
-    Busca un afiliado en la lista de turnos y/o emergencias y muestra cuantas veces se atendieron
-    se appendean en orden asi que se puede trabajar con los indices!
-    pre:recibe como parametro las cantidades de consultas y sus numeros de afiliados()
-    post: Muestra en pantalla la cantidad de consultas y emergencias del paciente
-    solicitado!
-    """
-    if num in turnos:
-        i = turnos.index(num)
-        print(f"El afiliado {num} fue atendido {cant_turnos[i]} veces con turno")
-    if num in emergencias:
-            emergencias.index(num)
-            i = emergencias.index(num)
-            print(f"El afiliado {num} fue atendido {cant_emergencias[i]} veces por urgencia ")
     
 def validar_numero_de_afiliado(num_afiliado:int) -> bool:
     """
@@ -43,6 +27,20 @@ def eleccion_urgencia_o_turno(opcion:int) -> None:
     post: Si es 0 o 1(es decir, opcion valida) retorna True.
     """
     return opcion in [0,1]
+
+def buscar_info(afiliado:int,lista_urgencias_o_turnos:list[int],cant_urgencias_o_turnos:list[int])->int:
+    """"
+    Busca informacion de cuantas veces se atendio alguien, se invoca tanto con turnos
+    como con emergencias!
+    pre: recibe como parametro el num de afiliado, la lista con gente que se atendio
+    y la lista con la cantidad de veces que se atendieron.
+    post: retorna el total de emergencias/turnos!
+    
+    """
+    lista_urgencias_o_turnos.index(afiliado)
+    i = lista_urgencias_o_turnos.index(afiliado)
+    return cant_urgencias_o_turnos[i]
+
 def main()->None:
     """
     Genera 4 listas vacias. los afiliados que tuvieron turnos, afiliados que tuvieron
@@ -83,11 +81,12 @@ def main()->None:
             break
         if validar_numero_de_afiliado(num_afiliado):
             if num_afiliado in lista_turnos:
-                i = lista_turnos.index(num_afiliado)
-                print(f"El afiliado {num_afiliado} fue atendido {lista_cantidad_turnos[i]} veces con turno")
+               cantidad_de_emergencias = buscar_info(num_afiliado,lista_turnos,lista_cantidad_turnos)
+               print(f"El afiliado {num_afiliado} fue atendido {cantidad_de_emergencias} veces por turno ")
             if num_afiliado in lista_urgencias:
-                lista_urgencias.index(num_afiliado)
-                i = lista_urgencias.index(num_afiliado)
-                print(f"El afmiliado {num_afiliado} fue atendido {lista_cantidad_urgencias[i]} veces por urgencia ")
+                cantidad_de_emergencias = buscar_info(num_afiliado,lista_urgencias,lista_cantidad_urgencias)
+                print(f"El afiliado {num_afiliado} fue atendido {cantidad_de_emergencias} veces por urgencia ")
+        else:
+            print("Numero invalido.")
     
 main()
