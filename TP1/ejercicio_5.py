@@ -26,6 +26,8 @@ def triangular(num:int) -> bool:
             suma += i
         if suma == num:
             return True
+        if suma > num:
+            break #nueva correcion! evito iteraciones inecesarias, ya me pase del numero buscado.
     return False
 
 
