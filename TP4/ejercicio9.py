@@ -1,6 +1,6 @@
 def ordenar_por_len(cadena):
     lista = cadena.split()
-    lista.sort(key=len) #ordeno por el largo de las palabras!
+    sorted(lista, key=len) #ordeno por el largo de las palabras!
     lista_a_string = " ".join(lista)
     return lista_a_string
 

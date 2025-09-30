@@ -20,15 +20,18 @@ def patron_b(matriz:list)->list[list]:
     pre: No recibe parametros
     post: Retorna la matriz 
     """
-    num = 27
-    #step_de_rebanada = -1
+    numero_a_elevar = len(matriz)
+    num = 3 ** (numero_a_elevar  -1)
+    print(num)
     for i, f in enumerate(matriz):
           for i2, e in enumerate(f):
              if i2 == i:
                 f[-i2 - 1] = num 
-                num = num // 3
+                numero_a_elevar -= 1
+                num = 3 ** (numero_a_elevar  -1)
                 break
     return matriz
+
 def patron_c(matriz:list)->list[list]:
     """
     Carga una matriz en un patron especificado.
@@ -54,7 +57,7 @@ def patron_d(matriz:list)->list[list]:
     post: Retorna la matriz 
     """
     num_inicial = len(matriz) * 2
-    largo = len(matriz)
+    
     
     for i, fila in enumerate(matriz):
         for i2,columna in enumerate(fila):
@@ -163,5 +166,5 @@ def main():
         for c in range(tamaño):
             fila.append(0) #hasta aca son listas de 0!!
         matriz.append(fila) #aca ya son filas de la matriz!!!
-    print(patron_g(matriz))
+    print(patron_d(matriz))
 main()

@@ -67,7 +67,7 @@ def dia_mas_productivo(matriz:list[list]) -> int:
         
 def lista_por_comprension(matriz:list[list])->list[int]:
     """
-    Genera una lista por comprension con la menor cantidad de ventas por dia
+    Genera una lista por comprension con la menor cantidad de ventas por fabrica
     pre: Recibe como parametro una matriz.
     post: Retorna la lista por comprension.
     """
