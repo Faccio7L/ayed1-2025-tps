@@ -143,6 +143,8 @@ def main():
                             #diferencia = (horario,horario_2)
                     horas,minutos = calcular_diferencia_de_horario(diferencia)
                     print(f"La diferencia horaria es de {horas} horas y {minutos} minutos.")
+        else:
+            print("dia incorrecto.")
 main()
             
 
