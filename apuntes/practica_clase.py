@@ -9,17 +9,6 @@ def main():
 
 print(main())
 
-
-
-
-
-
-
-
-
-
-
-
 def aaaaaaaaa(): #para ver cuanto tarda en quedar en orden ascendente!
     contador = 1
     while True:

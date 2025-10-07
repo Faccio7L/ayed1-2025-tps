@@ -6,7 +6,7 @@ def intercalar_listas(lista_1:list[int], lista_2:list[int])->list[int]:
     """
     indice_nuevo_num = 1
     for num in lista_2:
-        lista_1[indice_nuevo_num:indice_nuevo_num:1] = [num] #aparentemente esta linea no funciona del todo bien
+        lista_1[indice_nuevo_num:indice_nuevo_num:1] = [num]  #slice vacio, "empuja" al resto de elementos, sino sustituye.
         indice_nuevo_num += 2
     return lista_1
 

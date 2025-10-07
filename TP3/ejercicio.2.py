@@ -106,10 +106,11 @@ def patron_f(matriz:list)-> list[list]:
 
 def patron_(matriz) -> list[list]:
     """
-    Esta funcion esta hardcodeada, tendria que encontrar una forma de reemplazar
-    los numeros por variables, no encuentro un patron para trabajarlos bien.
+    Esta funcion esta hardcodeada para un 4x4, 
+    no encuentro un patron para trabajarlos bien.
     pre: Recibe como parametro una matriz
     post: retorna una matriz en forma de espiral
+    #NOTAS CLASE CONSULTA: SI ES IMPAR TERMINA CENTRADO, SI ES PAR TERMINA EN ESPIRAL COMUN.
     """
     inicial = 1
     largo = len(matriz)
@@ -166,5 +167,5 @@ def main():
         for c in range(tamaño):
             fila.append(0) #hasta aca son listas de 0!!
         matriz.append(fila) #aca ya son filas de la matriz!!!
-    print(patron_d(matriz))
+    print(patron_(matriz))
 main()

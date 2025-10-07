@@ -12,7 +12,7 @@ def mostrar_butacas(filas:int,columnas:int)->list[list]:
             fila.append(rn.randint(0,1))
         matriz.append(fila)
     return matriz
-def reservar(matriz)->list[list]:
+def reservar(matriz)->bool:
     """
     Se le solicita al usuario un asiento para reservar
     pre: Recibe como parametro la Matriz de asientos.
@@ -22,7 +22,7 @@ def reservar(matriz)->list[list]:
     contador = 0
     reserva = int(input("Elija un asiento, van desde la silla 1 hacia adelante(las que dicen 0 estan libres):"))
     for i, f in enumerate(matriz):
-        for i2, c in enumerate(f):
+        for i2, c in enumerate(f): #mira todos los hacientos de la fila, despues cambia de fila y el contador SIGUE hasta que coincide con el asiento solicitado.
             contador += 1
             if contador == reserva:
                 silla = matriz[i][i2]
@@ -50,15 +50,16 @@ def butacas_contiguas(matriz:list[list])->list[list]:
     post: Retorna el contador mas largo continuo y su fila.
     """
     contador_mas_largo = 0
-    contador = 0
+    #contador = 0
     for i, f in enumerate(matriz):
+        contador = 0 #si termina la fila el contar es 0.
         for i2, c in enumerate(f):
             if matriz[i][i2] == 0:
                 contador += 1
                 if contador > contador_mas_largo:
                     contador_mas_largo = contador
                     fila = i #en que fila ocurre la secuencia mas larga
-            else:
+            else: #si encuentra un 1 tambien vuelve a 0.
                 contador = 0
     return contador_mas_largo, fila
             

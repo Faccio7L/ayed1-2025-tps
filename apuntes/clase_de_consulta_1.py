@@ -29,3 +29,10 @@ for empleado in empleados:
     datos_de_empleado = [[tupla for tupla in zip(encabezado,empleado)]for empleado in empleados if int(empleado[1]) > 20000 and empleado[0].upper().startswith("M")]
     
 print(datos_de_empleado)
+
+#EJERCICIO DE MATRIZ(concepto): MUCHOS FOR/WHILE QUE COMPLETEN 0, SI NO HAY 0 BREAK. FOR SIN RANGE.
+#WHILE nro <= n**2:
+#quizas un while true principal(if nro <= n**2 break) y un par de while true para completar abajo
+
+#matriz[1][0] = n**2 -(n-2)**2
+print(type((5)))
