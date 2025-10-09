@@ -1,5 +1,9 @@
-
-def buscar_subcadena(cadena,subcadena):
+def buscar_subcadena(cadena:list,subcadena:list)->int:
+    """
+    Buscar repeticiones de una subcadena en una cadena principal
+    pre: recibe una cadena y una subcadena.
+    post:Retorna la repeticion total de las subcadenas.
+    """
     repeticiones_totales = 0
     while True:
         contador = 0
@@ -18,6 +22,11 @@ def buscar_subcadena(cadena,subcadena):
 
 
 def main():
+    """
+    Se ingresa una cadena main, una subcadena y se convierten en listas.
+    tambien se invoca 
+    
+    """
     cadena_main = input("Ingrese una cadena:")
     subcadena = input("Ingrese una subcadena:")
     cadena_por_caracteres = list(cadena_main)

@@ -64,7 +64,7 @@ def patron_d(matriz:list)->list[list]:
             fila[i2] = num_inicial
         num_inicial = num_inicial // 2
     return matriz
-
+    
 def patron_e(matriz:list)->list[list]:
     """
     Carga una matriz en un patron especificado.

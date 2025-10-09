@@ -17,7 +17,12 @@ def validar_fecha(fecha)-> bool:
     else: 
         return False
     
-def pasar_fecha_a_str(fecha,corte = 30):
+def pasar_fecha_a_str(fecha:tuple,corte:int = 30)->None:
+    """
+    Muestra en pantalla un año en formato extendido
+    pre: Recibe como parametro los ultimos dos dias de un año y un mes en LETRAS.
+    post: No.
+    """
     meses = {
     1: "enero",
     2: "febrero",
@@ -40,7 +45,12 @@ def pasar_fecha_a_str(fecha,corte = 30):
         print(f"{dia} de {meses[mes]} del año 20{año}")
 
 
-def main():
+def main()->None:
+    """
+    se ingresa una fecha y se invocan otras funciones.
+    pre: no.
+    post: no.
+    """
     while True:
         dia = int(input("Ingrese un dia."))
         mes = int(input("Ingrese un mes"))

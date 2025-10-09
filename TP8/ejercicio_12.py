@@ -1,4 +1,9 @@
-def incremento_cuadernos(diccionario):
+def incremento_cuadernos(diccionario:dict)->None:
+    """
+    Busca en un diccionario si el value de un cuaderno es "si" y le realiza un aumento.
+    pre:Recibe como parametro un diccionario.
+
+    """
     for clave , values in diccionario.items():
         if values["es cuaderno"] == "si":
             values["precio"] = values["precio"] * 1.15
@@ -6,7 +11,11 @@ def incremento_cuadernos(diccionario):
 
 
 
-def llenar_diccionario():
+def llenar_diccionario()->None:
+    """
+    Se llena un diccionario con objetos y values 
+    y se invoca la funcion de incremento de cuadernos.
+    """
     validar_precio = lambda x: x > 0
     diccionario = {}
     while True:

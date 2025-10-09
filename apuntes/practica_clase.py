@@ -10,6 +10,7 @@ def main():
 print(main())
 
 def aaaaaaaaa(): #para ver cuanto tarda en quedar en orden ascendente!
+    pass
     contador = 1
     while True:
         
@@ -27,3 +28,11 @@ def aaaaaaaaa(): #para ver cuanto tarda en quedar en orden ascendente!
 
 print(aaaaaaaaa())
 
+random_ = "hola me llamo santi"
+for i, e in enumerate(random_):
+    print(i,e)
+
+
+palos = ("oro","basto","copa","espada")
+naipes = [(palo,numero) for palo in palos for numero in range(1,13)]
+print(naipes)

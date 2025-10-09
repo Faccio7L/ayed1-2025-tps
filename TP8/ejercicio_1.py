@@ -25,6 +25,11 @@ def validar_hora(horario):
 
 
 def calcular_diferencia_de_horario(horarios):
+    """
+    Verifica la diferencia entre 2 horarios.
+    pre: Recibe una tupla de tuplas de tuplas, compuesta por dos horarios con horas y minutos
+    post: Retorna la cantidad de horas y minutos de diferencia.
+    """
     horario1, horario2, = horarios
     contador = 0 #contador de minutos.
     hora, minuto = horario1
@@ -66,10 +71,19 @@ def validar_fecha(fecha)-> bool:
         return False
     
 def validar_hora(horario):
+    """
+    Valida que una hora(hora,minuto) sea valida.
+    
+    """
     hora, minuto = horario
     return 0 <= hora < 24 and 0 <= minuto < 60
 
-def ver_primer_horario(hor,hor2):
+def ver_primer_horario(hor,hor2)->bool:
+    """Verifica que horario se encuentra primero.
+    pre: recibe como parametro dos horarios.
+    post: Retorna True o False
+    
+    """
     return hor > hor2 #retorna True si el horario 1 fue el dia ANTERIOR  a hor 2.
 
 def dia_siguiente(a:int,b:int,c:int) ->int:
@@ -117,7 +131,12 @@ def sumar_N_dias(fecha) -> None:
     print(f"El dia obtenido es {a} del mes {b} del año {c}")
     
 
-def main():
+def main()->None:
+    """
+    Se cargan los datos que seran solicitados en otras funciones e invoca  a las mismas.
+    pre: No.
+    post: No.
+    """
     while True:
         año = int(input("Ingrese un año:"))
         mes = int(input("Ingrese un mes:"))

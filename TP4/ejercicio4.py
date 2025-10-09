@@ -1,6 +1,11 @@
-def calculo(numero_romano,numero):
+def calculo(numero_romano:dict,numero:int)->list:
+    """
+    transforma un numero en un numero romano
+    pre: Numero entero del 1 al 4000. diccionario de numeros enteros y romanos.
+    post: retorna el numero romano.
+    """
     lista = []
-    while numero > 0: # lo "descomponemos" hasta que llegue a 0!
+    while numero > 0: # resta hasta que llegue a 0
         for entero, romano in numero_romano.items():
             if numero >= entero:
                 lista.append(romano)
@@ -10,8 +15,12 @@ def calculo(numero_romano,numero):
     return lista
 
 
-def main(): 
-    valores_romanos = { #diccionario (obtenido de internet) que contempla todas las posibles restas!!!
+def main()->None: 
+    """
+    Se valida que se ingrese un entero del 1 al 4000. Se invoca la funcion de
+    calculo de entero a romano.
+    """
+    valores_romanos = { #diccionario (obtenido de internet) que contempla todos los numeros necesarios!
     1000: "M",
     900: "CM",
     500: "D",
@@ -23,10 +32,10 @@ def main():
     10: "X",
     9: "IX",
     5: "V",
-    4: "IV",
+    4: "IV", 
     1: "I"
       }
-    numero = int(input("Ingrese un numero del 1 al 4000."))
+    numero = int(input("Ingrese un numero del 1 al 4000:"))
     validacion = lambda x: x >= 1 and x <= 4000
     if validacion(numero):
         print(calculo(valores_romanos,numero))

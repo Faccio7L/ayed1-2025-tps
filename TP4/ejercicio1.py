@@ -1,6 +1,9 @@
 def main(str:str = "aba"):
+    """
+    Verifica si una lista es capicua.
+    """
     lista = list(str)
-    lista_copia = lista.copy()
+    lista_copia = lista[::]
     lista_copia.reverse()
     return lista_copia == lista
 print(main())

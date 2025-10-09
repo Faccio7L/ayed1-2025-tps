@@ -1,4 +1,8 @@
 def main():
+    """
+    Elimina palabras repetidas.
+
+    """
     set_= set()
     frase = input("Ingrese una frase:")
    

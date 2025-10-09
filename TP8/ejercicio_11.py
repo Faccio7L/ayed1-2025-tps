@@ -1,9 +1,8 @@
-def contar_vocales():
-    a = 0
-    e = 0
-    i = 0
-    o = 0
-    u = 0
+def contar_vocales()->None:
+    """
+    Cuenta las vocales de una frase.
+    """
+    a,e,i,o,u = 0,0,0,0,0
     frase = input("Ingrese una frase:")
     frase = list(frase)
     for letra in frase:

@@ -1,4 +1,12 @@
-def eliminar_claves(diccionario,claves = ["hola","3","juan","1", "martin"]):
+#HACER ASSERTS.
+def eliminar_claves(diccionario:dict,claves:list = ["hola","3","juan","1", "martin"])->tuple:
+    """
+    Elimina claves de un diccionario.
+    pre: Recibe como parametro un diccionario y claves a eliminar(lista)
+    post:Retorna el diccionario con claves eliminadas y contador de claves eliminadas.
+
+        
+    """
     claves_lista = []
     for clave, valor in diccionario.items(): 
          claves_lista.append(clave)
@@ -13,7 +21,11 @@ def eliminar_claves(diccionario,claves = ["hola","3","juan","1", "martin"]):
     return diccionario,contador
 
 
-def main():
+def main()->None:
+    """
+    Se genera un diccionario con values consecutivos(1,2,3) y claves ingresadas por el
+    usuario, tambien se invoca la funcion eliminar_claves.
+    """
     diccionario = dict()
     value = 1
     while True:
@@ -28,4 +40,7 @@ def main():
     print(eliminar_claves(diccionario))
 
 
+
+
 main()
+
