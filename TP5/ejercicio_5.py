@@ -2,7 +2,10 @@ import math as m
 class NumeroNegativoError(Exception):
     "Error por numero negativo"
 
-def cuadrado():
+def cuadrado()->None:
+    """
+    Calcula la raiz cuadrada de un numero ya sea entero, o decimal. 
+    """
     numero = input("Ingrese un numero:")
     try:
         numero = int(numero)

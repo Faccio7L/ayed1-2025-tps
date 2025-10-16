@@ -2,7 +2,7 @@ def ordenar_por_len(cadena:str)->str:
     """
     Se ordenan palabras por el len
     pre: recibe como parametros un str.
-    
+    post: retorna las palabras ordenadas!
     """
     lista = cadena.split()
     sorted(lista, key=len) #ordeno por el largo de las palabras y no por el "valor!

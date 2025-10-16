@@ -4,21 +4,26 @@ def separar_mail(mail:str)->tuple:
     pre: Recibe un mail
     post: retorna una tupla con el usuario y el segundo elemento es una lista con las partrs separadas por .
     """
-    if mail.count("@") != 1 or mail.count(".") != 2: #todos los mails creo que tienen 2 puntos y un @.
+    valido = True
+    if mail.count("@") != 1 or mail.count(".") not in [1,2]: #todos los mails creo que tienen 1 o 2 puntos y @.
+        valido = False
+    if  mail[-4::] == ".com" or mail[-7::] == ".com.ar":
+        pass
+    else:
+        valido = False
+    if not valido:
         return ()
     else:
         usuario,dominio = mail.split("@") #hago lista y desempaqueto en 2 variables
         #print(usuario,dominio)
         partes_dom = dominio.split(".")
-    return usuario,partes_dom
+    return usuario, partes_dom
 
-    
 def main()->None:
     """
-    se ingresa un mail y se invoca la funcion separar mail.
-    pre:no.
-    post:no.
+    Se ingresa un mail y se pasa como parametro para ver si tiene un formato valido.
+    
     """
-    mail = input("Ingrese una direccion de mail:")
+    mail = input("Ingrese un mail:")
     print(separar_mail(mail))
 main()

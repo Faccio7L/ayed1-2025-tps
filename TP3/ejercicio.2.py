@@ -104,7 +104,7 @@ def patron_f(matriz:list)-> list[list]:
 
     return matriz
 
-def patron_(matriz) -> list[list]:
+def patron_g(matriz,n) -> list[list]:
     """
     Esta funcion esta hardcodeada para un 4x4, 
     no encuentro un patron para trabajarlos bien.
@@ -113,47 +113,87 @@ def patron_(matriz) -> list[list]:
     #NOTAS CLASE CONSULTA: SI ES IMPAR TERMINA CENTRADO, SI ES PAR TERMINA EN ESPIRAL COMUN.
     """
     inicial = 1
-    largo = len(matriz)
-    for columna in range(largo):
-        matriz[0][columna] = inicial
-        inicial += 1
-    for fila in range(1,largo): #para no tocar [0] esa ya la complete
-        matriz[fila][largo -1 ] = inicial
-        inicial += 1
-    for columna in range (largo -2, -1, -1):
-        matriz[largo-1][columna] = inicial
-        inicial += 1
-    for fila in range(largo - 2, 0, -1 ): #Corta en uno, el indice 0 ya esta appendeado.
-        matriz[fila][0] = inicial
-        inicial += 1
-    for columna in range(1,3): #solo completo 1 y 2.
-         matriz[largo -3][columna] = inicial
-         inicial += 1
-    for fila in range(2,3):
-        matriz[fila][2] = inicial
-        inicial += 1
-    for columna in range(2,3):
-        matriz[columna][1] = inicial
-    return matriz
-            
-def patron_g(matriz) -> list[list]:
-    inicial = 1
-    for i,fila in enumerate(matriz):
-        for i2, e in enumerate(fila):
-            if i % 2 == 1: #osea si la fila es impar
-                if  fila[i2] == 0:
-                    fila[i2] = inicial
-                    inicial += 1 
+    #largo = len(matriz)
+    sub1_sub0 =  n**2 -(n-2)**2 #patron que encontramos en clase de consulta.
+    for i,f in enumerate(matriz):
+        for i2,c in enumerate(f):
+            if i == 0: #la primera fila la completa con numeros consecutivos.
+                matriz[i][i2] = inicial
+                inicial += 1
+            else: #ahora se completa para abajo.
+                matriz[i][-1] = inicial 
+                inicial += 1
+                break #solo trabajo con el ultimo de cada fila.
+    matriz[1][0] = sub1_sub0
+    inicial = sub1_sub0 - 1 #ahora apendeamos para abajo.
+    for i,f in enumerate(matriz):
+        for i2,c in enumerate(f):
+                if matriz[i][0] == 0:
+                    matriz[i][0] = inicial
+                    inicial -= 1
+    for i,f in enumerate(matriz):
+        for i2,c in enumerate(f):
+            if matriz[-1][i2] == 0:
+                matriz[-1][i2] = inicial
+                inicial -= 1
     
+#-----------------HASTA ACA SE COMPLETO TODA LA PARTE EXTERIOR DE CUALQUIER MATRIZ!!!--------------------
+    inicial = sub1_sub0 + 1
+    fila = 0
+    derecha_abajo = True
+    
+    while True:
+        fila += 1
+        if fila > len(matriz):
+            break
+        if derecha_abajo == True:
+            for i,f in enumerate(matriz):
+                for i2,c in enumerate(f):
+                    if matriz[fila][i2] == 0:
+                        matriz[fila][i2] = inicial
+                        inicial += 1
+                        
+                    if matriz[fila][-i2 -1 ] == 0:
+                        matriz[fila][-i2 - 1] = inicial
+                        inicial += 1
+                        
+            derecha_abajo = False
+            if inicial > n**2:
+                return matriz
+        else:
+            for i,f in enumerate(matriz):
+                for i2,c in enumerate(f):
+                    if matriz[fila][i2] == 0:
+                        matriz[fila][-i2 -1 ] = inicial
+                        inicial += 1
+                        
+                    if matriz[fila][i2] == 0:
+                        matriz[fila][i2] = inicial
+                        inicial += 1
+                        
+
+            derecha_abajo = True
+            if inicial > n**2:
+                return matriz
+
+def patron_h(matriz):
+    
+    inicial = 4
+    matriz[0][0] = 1
+    matriz[0][1] = 2
+    matriz[1][0] = 3
+    for i,fila in enumerate(matriz):
+        for i2, c in enumerate(fila):
+            if c == 0:
+                matriz[i][i2] = inicial
+                inicial += 1
+                break
             else:
-                if matriz[i][i2 - 1] == 0:
-                    matriz[i][-i2 -1] = inicial
-                    inicial += 1
-                    break
+                continue
     return matriz
+    
 
-
-          
+        
 def main():
     """
     Se crea una matriz con las dimensiones solicitadas por el usuario.
@@ -167,5 +207,7 @@ def main():
         for c in range(tamaño):
             fila.append(0) #hasta aca son listas de 0!!
         matriz.append(fila) #aca ya son filas de la matriz!!!
-    print(patron_(matriz))
+    matriz_a_mostar = patron_h(matriz)
+    for fila in matriz_a_mostar:
+        print(fila)
 main()

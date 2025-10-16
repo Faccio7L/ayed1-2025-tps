@@ -1,5 +1,9 @@
 import random as rn
-def juego():
+def juego()->None:
+    """
+    Se genera un numero random del 1 al 500. el usuario recibe pistas y debe adivinarlo,
+    por ultimo se muestran los intentps realizados por el usuario.
+    """
     numero_a_adivinar = rn.randint(1,500)
     contador = 0
     while True:

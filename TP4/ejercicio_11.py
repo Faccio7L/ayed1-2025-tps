@@ -29,7 +29,7 @@ def main():
     """
     cadena_main = input("Ingrese una cadena:")
     subcadena = input("Ingrese una subcadena:")
-    cadena_por_caracteres = list(cadena_main)
+    cadena_por_caracteres = list(cadena_main) #un str es iterable pero inmutable, convertir en lista es clave para la linea 13.
     subcadena_por_caracteres = list(subcadena)
     print(buscar_subcadena(cadena_por_caracteres,subcadena_por_caracteres))
 main()
