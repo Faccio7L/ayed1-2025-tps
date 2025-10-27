@@ -1,0 +1,25 @@
+De: remitente.prueba@test.com
+Para: destinatario.python@test.com
+Asunto: Archivo de prueba (Testeo) - ID 749-B
+
+Estimado equipo:
+
+Esta es una carta de prueba para mandar vía mail. El objetivo principal de este archivo .txt es testear en Python la lectura y el procesamiento de texto.
+
+El script debe ser capaz de leer este archivo línea por línea.
+Debería poder diferenciar el encabezado (De, Para, Asunto) del cuerpo principal de la carta.
+
+Segundo párrafo.
+Aquí incluimos caracteres especiales como acentos (programación, ágil) y la letra ñ. También números (1, 2, 3, 45.8) y símbolos (%).
+Queremos verificar que el encoding (utf-8) funcione correctamente y que el programa no falle al encontrar estos caracteres.
+
+Tercer párrafo, etc. etc.
+La idea es simular un cuerpo de email real. El programa podría estar diseñado para buscar palabras clave, como "Python", "importante", "error" o "adjunto".
+
+Por favor, confirmar la recepción de este archivo de prueba.
+ID de transacción: 987-654-321
+
+Atentamente,
+
+El equipo de QA
+-- FIN DEL ARCHIVO DE PRUEBA --
