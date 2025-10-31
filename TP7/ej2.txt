@@ -6,19 +6,9 @@ Estimado equipo:
 
 Esta es una carta de prueba para mandar vía mail. El objetivo principal de este archivo .txt es testear en Python la lectura y el procesamiento de texto.
 
-El script debe ser capaz de leer este archivo línea por línea.
-Debería poder diferenciar el encabezado (De, Para, Asunto) del cuerpo principal de la carta.
+ESTOS SON TEXTOS DE RELLENO, HOLA COMO ESTAS????
 
-Segundo párrafo.
-Aquí incluimos caracteres especiales como acentos (programación, ágil) y la letra ñ. También números (1, 2, 3, 45.8) y símbolos (%).
-Queremos verificar que el encoding (utf-8) funcione correctamente y que el programa no falle al encontrar estos caracteres.
-
-Tercer párrafo, etc. etc.
-La idea es simular un cuerpo de email real. El programa podría estar diseñado para buscar palabras clave, como "Python", "importante", "error" o "adjunto".
-
-Por favor, confirmar la recepción de este archivo de prueba.
-ID de transacción: 987-654-321
-
+ESTO ES PARA TESTEAR EL EJERCICIO 2 DEL TP 7 EJERCICIO NUMERO 2!!!!!!
 Atentamente,
 
 El equipo de QA

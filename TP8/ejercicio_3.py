@@ -14,9 +14,9 @@ def separar_mail(mail:str)->tuple:
     if not valido:
         return ()
     else:
-        usuario,dominio = mail.split("@") #hago lista y desempaqueto en 2 variables
+        usuario,dominio = mail.split("@") #desempaqueto en dos variables asi que no queda lista.
         #print(usuario,dominio)
-        partes_dom = dominio.split(".")
+        partes_dom = dominio.split(".") #aca quedan listas del dom.
     return usuario, partes_dom
 
 def main()->None:

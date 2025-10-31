@@ -54,7 +54,7 @@ def main()->None:
     while True:
         dia = int(input("Ingrese un dia."))
         mes = int(input("Ingrese un mes"))
-        año = int(input("Ingrese un año(solo dos cifras):"))
+        año = int(input("Ingrese un año(solo ultimas dos cifras):"))
         fecha = (dia,mes,año)
         if validar_fecha(fecha):
             print("Fecha validada.")

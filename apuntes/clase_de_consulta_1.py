@@ -36,3 +36,23 @@ print(datos_de_empleado)
 
 #matriz[1][0] = n**2 -(n-2)**2
 print(type((5)))
+
+#sort perdes el iterable original. lista.sort() ES SOLO PARA LISTA.
+#sorted sirve como copia mas bien, para todos los iterables.
+
+#sorted recibe un iterable y devuelve una LISTA.
+tupla_prueba = (4,3) 
+tupla_ordenada = sorted(tupla_prueba) 
+
+alumnos = {
+            "1101": "Luquitas",
+            "3903":"mateo",
+            "999": "Juancito",
+            "5555": "amadeo"
+            
+                }
+print(sorted(alumnos)) #hasta aca, me faltan los values, tengo las key en una lista.
+
+alumnos_lista = alumnos.keys() #lista de keys. NO HACE FALTA EN ESTE CASO!
+lista2 = sorted(alumnos.values(),key=len(lambda x:x[-1])) 
+print(lista2)

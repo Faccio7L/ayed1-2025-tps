@@ -8,7 +8,7 @@ try:
             break
     
     with open("ej2.txt","rt",encoding="utf-8") as prueba: #uso un txt random que puse en esta carpeta.
-        texto = prueba.read() 
+        texto = prueba.read()  #devuelve un str grande, no lista
         texto = texto.split() #el texto separado en lista.
     contador = 1
     desde = 0
