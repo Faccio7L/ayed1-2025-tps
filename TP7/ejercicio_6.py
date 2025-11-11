@@ -42,8 +42,9 @@ def verificar_mayor(fecha1,fecha2)-> bool:
             else:
                 return True
 def modificar_txt(flia:tuple,reserva:tuple)->None:
-        """modifica el .txt
-           pre: recibe como parametro dos tuplas con toda la info necesaria para modificar el txt
+        """
+        modifica el .txt
+        pre: recibe como parametro dos tuplas con toda la info necesaria para modificar el txt
         """ 
         
     
@@ -84,7 +85,10 @@ def modificar_txt(flia:tuple,reserva:tuple)->None:
 
             
 def inicializar_programa()->None:
-    "primera vez que corres el programa, crea el .txt"
+    """
+    primera vez que corres el programa, crea el .txt
+    
+    """
     with open("hotel.txt","wt",encoding="utf-8") as h:
             for x in range(1,11):
                 for y in range(1,7):
