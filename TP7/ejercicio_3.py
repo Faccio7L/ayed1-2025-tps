@@ -22,4 +22,4 @@ try:
                     else:
                         print("Debe ser un numero entre 1.4 y 2.5")
 except Exception as e:
-    print("Hubo un error.")
+    print(f"Hubo un error:{e}")

@@ -16,7 +16,7 @@ def validar_fecha(a:int,b:int,c:int)-> bool:
     else: 
         return False
 
-def verificar_mayor(fecha1,fecha2)-> bool:
+def verificar_mayor(fecha1:tuple[int],fecha2:tuple[int])-> bool:
     """
     Revisa que fecha entre 2 es mayor.
     pre: Obtiene como parametro 2 fechas con su respectivo dia, mes y año.
@@ -46,9 +46,6 @@ def modificar_txt(flia:tuple,reserva:tuple)->None:
         modifica el .txt
         pre: recibe como parametro dos tuplas con toda la info necesaria para modificar el txt
         """ 
-        
-    
-        
         cantidad, dni, apellido, nombre = flia
         piso, cuarto, dia, mes, diaS, mesS = reserva
         nombre_completo = apellido,nombre 
@@ -94,6 +91,8 @@ def inicializar_programa()->None:
                 for y in range(1,7):
                     h.write(f"CUARTO {y} PISO {x}\n")
     main()
+    
+    #cuando termina!
     print("Gracias por usar Nuestro super sistema de hotel!")
         
 
