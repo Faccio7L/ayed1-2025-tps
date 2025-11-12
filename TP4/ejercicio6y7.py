@@ -8,7 +8,7 @@ def eliminar_subcadena_a(cadena_principaL:str,desde:int,hasta:int)->str:
     segunda_parte = cadena_principaL[hasta::1]
     nueva_cadena = primera_parte + segunda_parte
     return nueva_cadena
-def eliminar_subcadena_b(cadena_principal:str,desde,hasta):
+def eliminar_subcadena_b(cadena_principal:str,desde:int,hasta:int)->str:
     """
     Elimina de elementos de una cadena con listas por comprension
     pre: recibe la cadena, desde que string eliminar y cuantos.

@@ -1,4 +1,4 @@
-def main(str:str = "aba"):
+def main(str:str = "aba") ->bool:
     """
     Verifica si una lista es capicua.
     """

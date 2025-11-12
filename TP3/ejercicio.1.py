@@ -144,7 +144,11 @@ def simetrica_diagonal_secundaria()->bool:
 
 
 
-def main():
+def main()->None:
+    """
+    Menu principal para invocar otras funciones.
+    
+    """
     while True:
         op = int(input("Seleccione una opcion(0 para salir):"))
         if op == 0:

@@ -5,7 +5,7 @@ def separar_mail(mail:str)->tuple:
     post: retorna una tupla con el usuario y el segundo elemento es una lista con las partrs separadas por .
     """
     valido = True
-    if mail.count("@") != 1 or mail.count(".") not in [1,2]: #todos los mails creo que tienen 1 o 2 puntos y @.
+    if mail.count("@") != 1 or mail.count(".") not in (1,2): #todos los mails creo que tienen 1 o 2 puntos y @.
         valido = False
     if  mail[-4::] == ".com" or mail[-7::] == ".com.ar":
         pass

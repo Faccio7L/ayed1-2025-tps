@@ -54,5 +54,6 @@ alumnos = {
 print(sorted(alumnos)) #hasta aca, me faltan los values, tengo las key en una lista.
 
 alumnos_lista = alumnos.keys() #lista de keys. NO HACE FALTA EN ESTE CASO!
-lista2 = sorted(alumnos.values(),key=len(lambda x:x[-1])) 
+lista2 = sorted(alumnos.values(),key=lambda x:x[-1]) 
 print(lista2)
+

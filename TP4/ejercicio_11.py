@@ -21,7 +21,7 @@ def buscar_subcadena(cadena:list,subcadena:list)->int:
     return repeticiones_totales
 
 
-def main():
+def main()->None:
     """
     Se ingresa una cadena main, una subcadena y se convierten en listas.
     tambien se invoca 

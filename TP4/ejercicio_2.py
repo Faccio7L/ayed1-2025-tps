@@ -1,4 +1,4 @@
-def main(columnas=80):
+def main(columnas=80)->None:
     """
     Centra texto.
     pre: Columnas a printear.
